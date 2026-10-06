@@ -9,7 +9,7 @@
   // Largest upload accepted by your form provider (Netlify Forms: 8 MB per submission).
   var MAX_UPLOAD_MB = 8;
   // true only when the site is hosted on Netlify, where Netlify Forms accept plain form posts.
-  // On any other host (this site runs on Cloudflare Pages), set each form's data-endpoint instead.
+  // On any other host (this site runs on GitHub Pages), set each form's data-endpoint instead.
   var NETLIFY_FORMS = false;
   // ---------------------------------------------------------------------------
 

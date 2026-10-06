@@ -1,6 +1,6 @@
 # Optimolds website
 
-Live at **https://optimolds.com**, hosted on Cloudflare Pages. The Optimolds marketing site, built from [`docs/blueprint.md`](docs/blueprint.md): 18 pages of plain HTML and CSS. There's no framework and nothing to install, and it runs on any static host.
+Live at **https://optimolds.com**, hosted on GitHub Pages (DNS on Cloudflare). The Optimolds marketing site, built from [`docs/blueprint.md`](docs/blueprint.md): 18 pages of plain HTML and CSS. There's no framework and nothing to install, and it runs on any static host.
 
 ```
 site/                 ← the website itself (this folder is what gets published)
@@ -66,11 +66,11 @@ The header, footer and `<head>` live once in `partials/`. Edit them there and ru
 
 ## Forms
 
-Both forms (Feasibility Check and Contact) send visitors to `thank-you.html` after submitting. **Cloudflare Pages only serves files and doesn't receive form posts**, so each form needs a form service. Until one is connected, visitors see a polite "form isn't connected yet" message instead of an error.
+Both forms (Feasibility Check and Contact) send visitors to `thank-you.html` after submitting. **GitHub Pages only serves files and doesn't receive form posts**, so each form needs a form service. Until one is connected, visitors see a polite "form isn't connected yet" message instead of an error.
 
 1. Create a free account at [Formspree](https://formspree.io) (or similar) and make two forms, "Feasibility check" and "Contact". Turn on email notifications and, if you like, an auto-reply.
 2. Paste each form's URL into the matching `data-endpoint="…"` attribute in `site/feasibility-check.html` and `site/contact.html`, for example `data-endpoint="https://formspree.io/f/abcdwxyz"`.
-3. Commit and push; Cloudflare redeploys automatically.
+3. Commit and push to `main`; the site redeploys automatically.
 
 Formspree's free plan doesn't accept file uploads, so on that plan visitors should use the "link to your files" field (or remove the upload field). For built-in uploads and auto-replies on a free plan, build the form in [Tally](https://tally.so) and replace the `<form>` with their embed code.
 
@@ -80,25 +80,30 @@ If you ever move the site to **Netlify**, set `NETLIFY_FORMS = true` in `site/as
 
 Put your Google Analytics 4 ID in `GA_MEASUREMENT_ID` at the top of `site/assets/js/main.js`. Analytics loads **only after a visitor clicks "Accept analytics"**. "Essential only" and the × both mean no. Visitors can change their choice via *Cookie settings* in the footer. The Cookie Policy already describes this setup, so update it if you add other tools.
 
-## Deploy (Cloudflare Pages)
+## Deploy (GitHub Pages)
 
-The site is a Cloudflare Pages project connected to this GitHub repo, so every push redeploys it automatically. One-time setup:
+Every push to `main` runs `.github/workflows/static.yml`, which runs `node scripts/build.mjs` and publishes the `site` folder to GitHub Pages. If the build finds a broken link, the deploy stops, so a broken site never goes live. Progress is shown under the repo's **Actions** tab.
 
-1. Cloudflare dashboard → **Workers & Pages** → **Create application** → **Pages** tab → **Import an existing Git repository**.
-2. Choose GitHub → `Sinadehesh/MAX` → **Begin setup**.
-3. Settings:
-   - Project name: `optimolds`
-   - Production branch: the branch that holds the site (`main` once it's merged there)
-   - Framework preset: **None**
-   - Build command: `node scripts/build.mjs`
-   - Build output directory: `site`
-4. **Save and Deploy**. The site appears at `optimolds.pages.dev`.
-5. In the project → **Custom domains** → **Set up a custom domain** → `optimolds.com` → **Activate domain**. Because the domain's DNS is on the same Cloudflare account, Cloudflare creates the DNS record automatically. Repeat for `www.optimolds.com`.
-6. Optional: send `www` to the bare domain with **Rules** → **Redirect Rules** → template **Redirect from WWW to root**.
+Repository settings (one-time, already done except the domain):
 
-`site/_headers` sets security headers and long caching for fonts. Cloudflare serves `site/404.html` for missing pages and `/about` for `about.html` automatically.
+- **Settings → Pages → Build and deployment → Source: GitHub Actions.** If this is set to "Deploy from a branch", GitHub renders the README as the website instead.
+- **Settings → Pages → Custom domain:** `optimolds.com` → Save, then tick **Enforce HTTPS** once the certificate is issued. (With an Actions deploy, a `CNAME` file isn't needed or used.)
 
-After launch, submit `https://optimolds.com/sitemap.xml` in Google Search Console.
+DNS for optimolds.com in Cloudflare (**DNS → Records**), all set to **DNS only** (grey cloud) so GitHub can issue the HTTPS certificate:
+
+| Type | Name | Content |
+|---|---|---|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| AAAA | `@` | `2606:50c0:8000::153` |
+| AAAA | `@` | `2606:50c0:8001::153` |
+| AAAA | `@` | `2606:50c0:8002::153` |
+| AAAA | `@` | `2606:50c0:8003::153` |
+| CNAME | `www` | `sinadehesh.github.io` |
+
+GitHub redirects `www.optimolds.com` to `optimolds.com` automatically. After launch, submit `https://optimolds.com/sitemap.xml` in Google Search Console.
 
 ## Add a page
 
