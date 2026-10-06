@@ -10,7 +10,8 @@
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash"
   },
-  "workers_dev": false,
+  // Keep the max.optimolds.workers.dev backup address on.
+  "workers_dev": true,
   "routes": [
     { "pattern": "optimolds.com", "custom_domain": true },
     { "pattern": "www.optimolds.com", "custom_domain": true }
