@@ -15,5 +15,8 @@
   "routes": [
     { "pattern": "optimolds.com", "custom_domain": true },
     { "pattern": "www.optimolds.com", "custom_domain": true }
-  ]
+  ],
+  // Branch builds run `wrangler preview`, which needs this block. It's empty because
+  // previews use the same top-level settings (assets etc.) as production.
+  "previews": {}
 }
