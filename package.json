@@ -5,7 +5,8 @@
   "description": "Optimolds marketing website: static HTML/CSS, no dependencies.",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "preview": "python3 -m http.server 8000 --directory site"
+    "preview": "python3 -m http.server 8000 --directory site",
+    "deploy": "node scripts/build.mjs && npx wrangler deploy"
   },
   "license": "MIT"
 }

@@ -1,0 +1,19 @@
+// Cloudflare Workers config: serves the /site folder as a static website on optimolds.com.
+// Deploying (Workers Builds or `npx wrangler deploy`) attaches both custom domains and
+// creates their DNS records automatically.
+{
+  // Must match the Worker's name in the Cloudflare dashboard.
+  "name": "max",
+  "compatibility_date": "2026-09-22",
+  "assets": {
+    "directory": "./site",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  },
+  // Keep the max.optimolds.workers.dev backup address on.
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "optimolds.com", "custom_domain": true },
+    { "pattern": "www.optimolds.com", "custom_domain": true }
+  ]
+}
