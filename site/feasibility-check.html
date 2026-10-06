@@ -8,6 +8,11 @@
 <!-- shared:head -->
 <meta name="theme-color" content="#0b1f33">
 <link rel="canonical" href="https://optimolds.com/feasibility-check">
+<link rel="alternate" hreflang="en" href="https://optimolds.com/feasibility-check">
+<link rel="alternate" hreflang="it" href="https://optimolds.com/it/feasibility-check">
+<link rel="alternate" hreflang="de" href="https://optimolds.com/de/feasibility-check">
+<link rel="alternate" hreflang="x-default" href="https://optimolds.com/feasibility-check">
+<meta property="og:locale" content="en_GB">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Optimolds">
 <meta property="og:title" content="Free Feasibility Check for Composite Parts | Optimolds">
@@ -29,7 +34,7 @@
   <div class="container">
     <a class="brand" href="index.html" aria-label="Optimolds home">
       <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0b1f33"/><path d="M7 13V8h18v5M7 19v5h18v-5" fill="none" stroke="#4fd8d6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 16c3.2-3.1 12.8-3.3 16 0-3.2 2.7-12.8 2.5-16 0z" fill="#1cc6c4"/></svg>
-      <span class="brand__name">Opti<span>molds</span></span>
+      <span class="brand__name" translate="no">Opti<span>molds</span></span>
     </a>
     <nav class="nav" aria-label="Main">
       <ul>
@@ -40,6 +45,14 @@
         <li><a href="contact.html" data-nav="contact">Contact</a></li>
       </ul>
     </nav>
+    <!-- lang:start --><details class="lang" translate="no">
+    <summary aria-label="Language: English"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.5 5.5 3.5 8.5s-1 5.9-3.5 8.5c-2.5-2.6-3.5-5.5-3.5-8.5s1-5.9 3.5-8.5z"/></svg><span>EN</span></summary>
+    <ul>
+      <li><a href="feasibility-check.html" hreflang="en" lang="en" aria-current="true">English</a></li>
+      <li><a href="it/feasibility-check.html" hreflang="it" lang="it">Italiano</a></li>
+      <li><a href="de/feasibility-check.html" hreflang="de" lang="de">Deutsch</a></li>
+    </ul>
+  </details><!-- lang:end -->
     <a class="btn btn--sm header-cta" href="feasibility-check.html" data-nav="feasibility" aria-current="page">Free Feasibility Check</a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
       <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -76,110 +89,129 @@
 
       <div class="form-card">
         <h2>Tell us about your part</h2>
-        <p class="muted">Fields marked <span class="req">*</span> are required.</p>
+        <p class="muted">Five short sections, about three minutes. Fields marked <span class="req">*</span> are required.</p>
 
         <!-- Form delivery: put your form service URL in data-endpoint (e.g. https://formspree.io/f/xxxx).
              Until it's set, visitors see a "not connected yet" message. See README.md → "Forms". -->
         <form class="form" data-form name="feasibility" method="POST" action="thank-you.html" enctype="multipart/form-data"
               data-netlify="true" netlify-honeypot="company_website" data-endpoint="">
           <input type="hidden" name="form-name" value="feasibility">
+          <input type="hidden" name="language" value="en">
           <p class="hp" aria-hidden="true"><label>Leave this empty <input name="company_website" tabindex="-1" autocomplete="off"></label></p>
 
-          <div class="form-row form-row--2">
-            <div class="field">
-              <label for="f-name">Name <span class="req">*</span></label>
-              <input id="f-name" name="name" type="text" autocomplete="name" required>
+          <fieldset class="form-section">
+            <legend><span class="form-section__num" aria-hidden="true">1</span>Your details</legend>
+            <div class="form-row form-row--2">
+              <div class="field">
+                <label for="f-name">Name <span class="req">*</span></label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="f-email">Email <span class="req">*</span></label>
+                <input id="f-email" name="email" type="email" autocomplete="email" required>
+              </div>
             </div>
-            <div class="field">
-              <label for="f-email">Email <span class="req">*</span></label>
-              <input id="f-email" name="email" type="email" autocomplete="email" required>
-            </div>
-          </div>
-
-          <div class="form-row form-row--2">
-            <div class="field">
-              <label for="f-company">Company</label>
-              <input id="f-company" name="company" type="text" autocomplete="organization">
-            </div>
-            <div class="field">
-              <label for="f-industry">Industry <span class="req">*</span></label>
-              <select id="f-industry" name="industry" required>
-                <option value="" selected disabled>Choose one</option>
-                <option>Watersports</option>
-                <option>Drones / UAV</option>
-                <option>Automotive / motorsport</option>
-                <option>Marine</option>
-                <option>Aerospace</option>
-                <option>Bicycles / e-bikes</option>
-                <option>Other</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="f-part">What is the part? <span class="req">*</span></label>
-            <input id="f-part" name="part" type="text" placeholder="e.g. hydrofoil front wing, drone arm, seat shell" required>
-          </div>
-
-          <div class="field">
-            <label for="f-cad">CAD upload</label>
-            <input id="f-cad" name="cad_file" type="file" accept=".step,.stp,.stl,.3mf,.igs,.iges,.x_t,.pdf,.zip">
-            <p class="hint">STEP or STL preferred. Up to 8 MB.</p>
-          </div>
-
-          <div class="field">
-            <label for="f-link">…or a link to your files</label>
-            <input id="f-link" name="cad_link" type="url" inputmode="url" placeholder="Google Drive, WeTransfer, Dropbox…">
-            <p class="hint">Use a link for large files.</p>
-          </div>
-
-          <div class="note-secure">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>
-            <p class="mb-0">Your files are confidential and used only for your project. NDA available on request.</p>
-          </div>
-
-          <div class="form-row form-row--2">
-            <div class="field">
-              <label for="f-process">Material / process</label>
-              <select id="f-process" name="process">
-                <option value="" selected disabled>Choose one</option>
-                <option>Carbon prepreg</option>
-                <option>Infusion</option>
-                <option>Wet layup</option>
-                <option>Not sure</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="f-qty">Quantity</label>
-              <select id="f-qty" name="quantity">
-                <option value="" selected disabled>Choose one</option>
-                <option>1 (prototype)</option>
-                <option>2–10</option>
-                <option>10–100</option>
-                <option>100+</option>
-              </select>
-            </div>
-          </div>
-
-          <fieldset class="field">
-            <legend>Which service interests you?</legend>
-            <div class="choices choices--2">
-              <label class="choice"><input type="checkbox" name="services[]" value="FEA &amp; Layup"> FEA &amp; Layup</label>
-              <label class="choice"><input type="checkbox" name="services[]" value="Mold Design"> Mold Design</label>
-              <label class="choice"><input type="checkbox" name="services[]" value="Mold &amp; Jig Manufacturing"> Mold &amp; Jig Manufacturing</label>
-              <label class="choice"><input type="checkbox" name="services[]" value="Not sure"> Not sure yet</label>
+            <div class="form-row form-row--2">
+              <div class="field">
+                <label for="f-company">Company</label>
+                <input id="f-company" name="company" type="text" autocomplete="organization">
+              </div>
+              <div class="field">
+                <label for="f-country">Country</label>
+                <input id="f-country" name="country" type="text" autocomplete="country-name">
+              </div>
             </div>
           </fieldset>
 
-          <div class="field">
-            <label for="f-notes">Notes and deadline</label>
-            <textarea id="f-notes" name="notes" placeholder="Anything we should know: loads, tolerances, surface finish, target date…"></textarea>
-          </div>
+          <fieldset class="form-section">
+            <legend><span class="form-section__num" aria-hidden="true">2</span>Your part</legend>
+            <div class="field">
+              <label for="f-part">What is the part? <span class="req">*</span></label>
+              <input id="f-part" name="part" type="text" placeholder="e.g. hydrofoil front wing, drone arm, seat shell" required>
+            </div>
+            <div class="form-row form-row--2">
+              <div class="field">
+                <label for="f-industry">Industry <span class="req">*</span></label>
+                <select id="f-industry" name="industry" required>
+                  <option value="" selected disabled>Choose one</option>
+                  <option value="Watersports">Watersports</option>
+                  <option value="Drones / UAV">Drones / UAV</option>
+                  <option value="Automotive / motorsport">Automotive / motorsport</option>
+                  <option value="Marine">Marine</option>
+                  <option value="Aerospace">Aerospace</option>
+                  <option value="Bicycles / e-bikes">Bicycles / e-bikes</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-process">Material / process</label>
+                <select id="f-process" name="process">
+                  <option value="" selected disabled>Choose one</option>
+                  <option value="Carbon prepreg">Carbon prepreg</option>
+                  <option value="Infusion">Infusion</option>
+                  <option value="Wet layup">Wet layup</option>
+                  <option value="Not sure">Not sure</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row form-row--2">
+              <div class="field">
+                <label for="f-qty">Quantity</label>
+                <select id="f-qty" name="quantity">
+                  <option value="" selected disabled>Choose one</option>
+                  <option value="1 (prototype)">1 (prototype)</option>
+                  <option value="2-10">2–10</option>
+                  <option value="10-100">10–100</option>
+                  <option value="100+">100+</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-deadline">Target deadline</label>
+                <input id="f-deadline" name="deadline" type="date">
+              </div>
+            </div>
+          </fieldset>
 
-          <label class="consent">
-            <input type="checkbox" name="privacy_consent" value="yes" required>
-            <span>I've read the <a href="privacy.html" target="_blank">Privacy Policy</a> and agree to Optimolds using my details and files to review my part and reply to me. <span class="req">*</span></span>
-          </label>
+          <fieldset class="form-section">
+            <legend><span class="form-section__num" aria-hidden="true">3</span>Your files</legend>
+            <div class="field">
+              <label for="f-cad">CAD upload</label>
+              <input id="f-cad" name="cad_file" type="file" accept=".step,.stp,.stl,.3mf,.igs,.iges,.x_t,.pdf,.zip">
+              <p class="hint">STEP or STL preferred. Up to 8 MB.</p>
+            </div>
+            <div class="field">
+              <label for="f-link">…or a link to your files</label>
+              <input id="f-link" name="cad_link" type="url" inputmode="url" placeholder="Google Drive, WeTransfer, Dropbox…">
+              <p class="hint">Use a link for large files.</p>
+            </div>
+            <div class="note-secure">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>
+              <p class="mb-0">Your files are confidential and used only for your project. NDA available on request.</p>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section" id="services">
+            <legend><span class="form-section__num" aria-hidden="true">4</span>Services you need</legend>
+            <p class="hint mt-0">Tick everything that applies.</p>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="services[]" value="FEA &amp; Layup Design" data-service="fea"> FEA &amp; Layup Design</label>
+              <label class="choice"><input type="checkbox" name="services[]" value="Mold Design" data-service="mold"> Mold Design</label>
+              <label class="choice"><input type="checkbox" name="services[]" value="Mold &amp; Tooling Manufacturing" data-service="tooling"> Mold &amp; Tooling Manufacturing</label>
+              <label class="choice"><input type="checkbox" name="services[]" value="Not sure" data-service="unsure"> Not sure yet</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend><span class="form-section__num" aria-hidden="true">5</span>Anything else</legend>
+            <div class="field">
+              <label for="f-notes">Notes</label>
+              <textarea id="f-notes" name="notes" placeholder="Loads, tolerances, surface finish, cure cycle…"></textarea>
+            </div>
+            <label class="consent">
+              <input type="checkbox" name="privacy_consent" value="yes" required>
+              <span>I've read the <a href="privacy.html" target="_blank">Privacy Policy</a> and agree to Optimolds using my details and files to review my part and reply to me. <span class="req">*</span></span>
+            </label>
+          </fieldset>
 
           <div class="form-status" role="alert" tabindex="-1"></div>
 
@@ -221,7 +253,7 @@
       <div>
         <a class="brand" href="index.html" aria-label="Optimolds home">
           <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#13304a"/><path d="M7 13V8h18v5M7 19v5h18v-5" fill="none" stroke="#4fd8d6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 16c3.2-3.1 12.8-3.3 16 0-3.2 2.7-12.8 2.5-16 0z" fill="#1cc6c4"/></svg>
-          <span class="brand__name">Opti<span>molds</span></span>
+          <span class="brand__name" translate="no">Opti<span>molds</span></span>
         </a>
         <p class="footer-tagline">From CAD to composite part: FEA &amp; layup, mold design and mold manufacturing for small composite producers.</p>
         <div class="social">
@@ -233,9 +265,9 @@
       <div>
         <h2>Services</h2>
         <ul>
-          <li><a href="fea-layup.html">FEA &amp; Layup</a></li>
+          <li><a href="fea-layup.html">FEA &amp; Layup Design</a></li>
           <li><a href="mold-design.html">Mold Design</a></li>
-          <li><a href="mold-manufacturing.html">Mold &amp; Jig Manufacturing</a></li>
+          <li><a href="mold-manufacturing.html">Custom Tooling &amp; Manufacturing</a></li>
           <li><a href="feasibility-check.html">Free Feasibility Check</a></li>
         </ul>
       </div>

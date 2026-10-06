@@ -8,6 +8,11 @@
 <!-- shared:head -->
 <meta name="theme-color" content="#0b1f33">
 <link rel="canonical" href="https://optimolds.com/services">
+<link rel="alternate" hreflang="en" href="https://optimolds.com/services">
+<link rel="alternate" hreflang="it" href="https://optimolds.com/it/services">
+<link rel="alternate" hreflang="de" href="https://optimolds.com/de/services">
+<link rel="alternate" hreflang="x-default" href="https://optimolds.com/services">
+<meta property="og:locale" content="en_GB">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Optimolds">
 <meta property="og:title" content="Composite Engineering Services | Optimolds">
@@ -29,7 +34,7 @@
   <div class="container">
     <a class="brand" href="index.html" aria-label="Optimolds home">
       <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0b1f33"/><path d="M7 13V8h18v5M7 19v5h18v-5" fill="none" stroke="#4fd8d6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 16c3.2-3.1 12.8-3.3 16 0-3.2 2.7-12.8 2.5-16 0z" fill="#1cc6c4"/></svg>
-      <span class="brand__name">Opti<span>molds</span></span>
+      <span class="brand__name" translate="no">Opti<span>molds</span></span>
     </a>
     <nav class="nav" aria-label="Main">
       <ul>
@@ -40,6 +45,14 @@
         <li><a href="contact.html" data-nav="contact">Contact</a></li>
       </ul>
     </nav>
+    <!-- lang:start --><details class="lang" translate="no">
+    <summary aria-label="Language: English"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.5 5.5 3.5 8.5s-1 5.9-3.5 8.5c-2.5-2.6-3.5-5.5-3.5-8.5s1-5.9 3.5-8.5z"/></svg><span>EN</span></summary>
+    <ul>
+      <li><a href="services.html" hreflang="en" lang="en" aria-current="true">English</a></li>
+      <li><a href="it/services.html" hreflang="it" lang="it">Italiano</a></li>
+      <li><a href="de/services.html" hreflang="de" lang="de">Deutsch</a></li>
+    </ul>
+  </details><!-- lang:end -->
     <a class="btn btn--sm header-cta" href="feasibility-check.html" data-nav="feasibility">Free Feasibility Check</a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
       <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -80,17 +93,17 @@
         </div>
         <div>
           <p class="eyebrow">01 · Analysis</p>
-          <h2>FEA &amp; Layup</h2>
-          <p class="lead">Know your part will perform before you build it.</p>
-          <p>We model your part under its real load cases and define the ply schedule, so you can see strength, stiffness and weight before committing to tooling.</p>
+          <h2>FEA &amp; Layup Design</h2>
+          <p class="lead">Structural Intelligence &amp; Ply Scheduling</p>
+          <p>Stop guessing your laminate architecture or risking structural failure. We engineering-proof your composite parts to ensure performance right where it matters.</p>
           <ul class="checklist">
-            <li>Structural analysis report</li>
-            <li>Ply schedule, orientation and layup recommendations</li>
-            <li>Weight / stiffness trade-offs</li>
+            <li><strong>Material Optimization:</strong> The ideal fiber-to-resin ratio tailored to your target loads.</li>
+            <li><strong>Weight Reduction:</strong> Every single ply is structurally justified to eliminate dead weight.</li>
+            <li><strong>Certified Safety:</strong> FEA simulation data replacing high-stakes empirical guesswork.</li>
           </ul>
           <div class="btn-row">
-            <a class="btn btn--dark" href="fea-layup.html">Explore FEA &amp; Layup</a>
-            <a class="btn btn--ghost" href="contact.html">Request a quote</a>
+            <a class="btn btn--dark" href="fea-layup.html">Explore FEA &amp; Layup Design</a>
+            <a class="btn btn--ghost" href="feasibility-check.html?service=fea#services">Select it in the form</a>
           </div>
         </div>
       </article>
@@ -102,16 +115,16 @@
         <div>
           <p class="eyebrow">02 · Tooling design</p>
           <h2>Mold Design</h2>
-          <p class="lead">Tooling designed for clean demolding and repeatable parts.</p>
-          <p>We start with a free review of your geometry, then design the mold around your process: parting line, demolding, alignment and the details that make every part come out the same.</p>
+          <p class="lead">Precision Tooling Blueprinting</p>
+          <p>You have the part geometry and the shop capacity, but a bad mold layout will ruin your production. We design the tool so you can manufacture with confidence.</p>
           <ul class="checklist">
-            <li>Mold CAD with parting and demolding design</li>
-            <li>Alignment features and optimization analysis</li>
-            <li>Files in STEP / STL / 3MF, drawings in PDF</li>
+            <li><strong>Flawless Demolding:</strong> Custom draft angles and parting lines optimized for your process.</li>
+            <li><strong>Shrinkage Control:</strong> Advanced geometry corrections based on resin and curing behavior.</li>
+            <li><strong>Production-Ready 3D:</strong> Blueprints tailored to Autoclave, Infusion, or Hand Lay-up.</li>
           </ul>
           <div class="btn-row">
             <a class="btn btn--dark" href="mold-design.html">Explore Mold Design</a>
-            <a class="btn btn--ghost" href="contact.html">Request a quote</a>
+            <a class="btn btn--ghost" href="feasibility-check.html?service=mold#services">Select it in the form</a>
           </div>
         </div>
       </article>
@@ -122,17 +135,17 @@
         </div>
         <div>
           <p class="eyebrow">03 · Manufacturing</p>
-          <h2>Mold &amp; Jig Manufacturing</h2>
-          <p class="lead">Production-ready molds and jigs, built and shipped.</p>
-          <p>We build your molds and jigs from an approved design, ours or yours, using the tooling method that suits the part: 3D-printed, CNC-machined or composite.</p>
+          <h2>Custom Tooling &amp; Manufacturing</h2>
+          <p class="lead">Turnkey Production Tools</p>
+          <p>Bypass internal bottlenecks and tight CNC tolerances. We manufacture and deliver the physical, custom production tools you need to streamline your laminating, trimming, and assembly phases.</p>
           <ul class="checklist">
-            <li>Molds and jigs built to your approved design</li>
-            <li>Inspection photos before shipping</li>
-            <li>Shipped across Europe and worldwide</li>
+            <li><strong>Complete Production Kit:</strong> High-precision molds, assembly jigs, and custom trimming fixtures.</li>
+            <li><strong>Tight CNC Tolerances:</strong> Flawless physical execution matching your exact digital geometry.</li>
+            <li><strong>Plug-and-Play Integration:</strong> Fully finished tools delivered straight to your line, ready for use.</li>
           </ul>
           <div class="btn-row">
             <a class="btn btn--dark" href="mold-manufacturing.html">Explore Manufacturing</a>
-            <a class="btn btn--ghost" href="contact.html">Request a quote</a>
+            <a class="btn btn--ghost" href="feasibility-check.html?service=tooling#services">Select it in the form</a>
           </div>
         </div>
       </article>
@@ -182,7 +195,7 @@
       <div>
         <a class="brand" href="index.html" aria-label="Optimolds home">
           <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#13304a"/><path d="M7 13V8h18v5M7 19v5h18v-5" fill="none" stroke="#4fd8d6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 16c3.2-3.1 12.8-3.3 16 0-3.2 2.7-12.8 2.5-16 0z" fill="#1cc6c4"/></svg>
-          <span class="brand__name">Opti<span>molds</span></span>
+          <span class="brand__name" translate="no">Opti<span>molds</span></span>
         </a>
         <p class="footer-tagline">From CAD to composite part: FEA &amp; layup, mold design and mold manufacturing for small composite producers.</p>
         <div class="social">
@@ -194,9 +207,9 @@
       <div>
         <h2>Services</h2>
         <ul>
-          <li><a href="fea-layup.html">FEA &amp; Layup</a></li>
+          <li><a href="fea-layup.html">FEA &amp; Layup Design</a></li>
           <li><a href="mold-design.html">Mold Design</a></li>
-          <li><a href="mold-manufacturing.html">Mold &amp; Jig Manufacturing</a></li>
+          <li><a href="mold-manufacturing.html">Custom Tooling &amp; Manufacturing</a></li>
           <li><a href="feasibility-check.html">Free Feasibility Check</a></li>
         </ul>
       </div>

@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formenkonstruktion für Composites | Optimolds</title>
+<meta name="description" content="Formenkonstruktion für Composites in Infusion, Prepreg und Handlaminat: Trennebene und Entformung, Ausrichtelemente und produktionsreifes CAD in STEP, STL, 3MF und PDF.">
+<!-- shared:head -->
+<meta name="theme-color" content="#0b1f33">
+<link rel="canonical" href="https://optimolds.com/de/mold-design">
+<link rel="alternate" hreflang="en" href="https://optimolds.com/mold-design">
+<link rel="alternate" hreflang="it" href="https://optimolds.com/it/mold-design">
+<link rel="alternate" hreflang="de" href="https://optimolds.com/de/mold-design">
+<link rel="alternate" hreflang="x-default" href="https://optimolds.com/mold-design">
+<meta property="og:locale" content="de_DE">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Optimolds">
+<meta property="og:title" content="Formenkonstruktion für Composites | Optimolds">
+<meta property="og:description" content="Formenkonstruktion für Composites in Infusion, Prepreg und Handlaminat: Trennebene und Entformung, Ausrichtelemente und produktionsreifes CAD in STEP, STL, 3MF und PDF.">
+<meta property="og:url" content="https://optimolds.com/de/mold-design">
+<meta property="og:image" content="https://optimolds.com/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/barlow-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/fonts.css">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<!-- /shared:head -->
+</head>
+<body data-nav="services">
+<!-- shared:header -->
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Optimolds Startseite">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0b1f33"/><path d="M7 13V8h18v5M7 19v5h18v-5" fill="none" stroke="#4fd8d6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 16c3.2-3.1 12.8-3.3 16 0-3.2 2.7-12.8 2.5-16 0z" fill="#1cc6c4"/></svg>
+      <span class="brand__name" translate="no">Opti<span>molds</span></span>
+    </a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="services.html" data-nav="services" aria-current="page">Leistungen</a></li>
+        <li><a href="process.html" data-nav="process">Ablauf</a></li>
+        <li><a href="projects.html" data-nav="projects">Projekte</a></li>
+        <li><a href="about.html" data-nav="about">Über uns</a></li>
+        <li><a href="contact.html" data-nav="contact">Kontakt</a></li>
+      </ul>
+    </nav>
+    <!-- lang:start --><details class="lang" translate="no">
+    <summary aria-label="Sprache: Deutsch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.5 5.5 3.5 8.5s-1 5.9-3.5 8.5c-2.5-2.6-3.5-5.5-3.5-8.5s1-5.9 3.5-8.5z"/></svg><span>DE</span></summary>
+    <ul>
+      <li><a href="../mold-design.html" hreflang="en" lang="en">English</a></li>
+      <li><a href="../it/mold-design.html" hreflang="it" lang="it">Italiano</a></li>
+      <li><a href="../de/mold-design.html" hreflang="de" lang="de" aria-current="true">Deutsch</a></li>
+    </ul>
+  </details><!-- lang:end -->
+    <a class="btn btn--sm header-cta" href="feasibility-check.html" data-nav="feasibility">Kostenlose Machbarkeitsprüfung</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobiles Menü">
+    <div class="container">
+      <ul>
+        <li><a href="services.html" data-nav="services" aria-current="page">Leistungen</a></li>
+        <li><a href="process.html" data-nav="process">Ablauf</a></li>
+        <li><a href="projects.html" data-nav="projects">Projekte</a></li>
+        <li><a href="about.html" data-nav="about">Über uns</a></li>
+        <li><a href="contact.html" data-nav="contact">Kontakt</a></li>
+      </ul>
+      <a class="btn" href="feasibility-check.html" data-nav="feasibility">Kostenlose Machbarkeitsprüfung</a>
+    </div>
+  </nav>
+</header>
+<!-- /shared:header -->
+
+<main id="main">
+
+  <!-- 1. Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Brotkrumen-Navigation"><a href="services.html">Leistungen</a> / Mold Design</nav>
+      <p class="eyebrow">Präzise Werkzeugkonstruktion</p>
+      <h1>Mold Design</h1>
+      <p class="lead">Sie haben die Bauteilgeometrie und die Fertigungskapazität – doch ein schlechtes Formlayout ruiniert Ihre Produktion. Wir konstruieren das Werkzeug, damit Sie mit Sicherheit fertigen können.</p>
+      <div class="btn-row">
+        <a class="btn" href="feasibility-check.html?service=mold#services">Im Formular auswählen</a>
+        <a class="btn btn--ghost" href="contact.html">Angebot anfordern</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 + 3. Who it's for / What you get -->
+  <section class="section">
+    <div class="container grid grid-2">
+      <div>
+        <p class="eyebrow">Für wen</p>
+        <h2>Für Bauteile, die sich jedes Mal sauber entformen lassen müssen.</h2>
+        <ul class="checklist">
+          <li>Sie haben ein validiertes Bauteil und brauchen eine Form, die sauber und reproduzierbar entformt.</li>
+          <li>Ihre aktuelle Form verursacht festsitzende Teile, beschädigte Kanten oder versetzte Formhälften.</li>
+          <li>Sie möchten produktionsreife Formdaten, um selbst zu bauen oder von uns bauen zu lassen.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Was Sie erhalten</h3>
+        <ul class="checklist mb-0">
+          <li>Form-CAD</li>
+          <li>Trennebene und Entformungskonzept</li>
+          <li>Ausrichtelemente</li>
+          <li>Optimierungsanalyse</li>
+          <li>Dateien in STEP / STL / 3MF, Zeichnungen als PDF</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free review callout -->
+  <section class="section--tight">
+    <div class="container">
+      <div class="panel panel--dark split split--wide-text">
+        <div>
+          <h3>Ihre Geometrie wird zuerst kostenlos geprüft</h3>
+          <p class="mb-0">Vor jeder Konstruktionsarbeit prüfen wir Ihr Bauteil kostenlos auf Entformungsschrägen, Hinterschneidungen, scharfe Kanten und andere Entformungsrisiken. Muss etwas geändert werden, wissen Sie es, bevor Sie eine Form bezahlen.</p>
+        </div>
+        <div class="btn-row"><a class="btn" href="feasibility-check.html">Kostenlose Prüfung anfordern</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 + 5. What we need / How it works -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="grid grid-2">
+        <div>
+          <p class="eyebrow">Was wir von Ihnen brauchen</p>
+          <h2>Drei Angaben für den Start.</h2>
+          <dl class="facts">
+            <div><dt>Bauteil-CAD</dt><dd>Ihre validierte Bauteilgeometrie, idealerweise als STEP.</dd></div>
+            <div><dt>Ablauf</dt><dd>Infusion, Prepreg oder Handlaminat, dazu Ihre Aushärtebedingungen.</dd></div>
+            <div><dt>Stückzahlen</dt><dd>Wie viele Teile die Form produzieren soll.</dd></div>
+          </dl>
+        </div>
+        <div>
+          <p class="eyebrow">So funktioniert es</p>
+          <h2>Von der Geometrie zum Form-CAD.</h2>
+          <ol class="next-steps">
+            <li><p><strong>Geometrieprüfung (kostenlos).</strong> Wir prüfen Entformungsschrägen, Hinterschneidungen, Kanten und Entformungsrisiken.</p></li>
+            <li><p><strong>Optimierung.</strong> Wir schlagen Änderungen vor und stimmen die technische Richtung mit Ihnen ab.</p></li>
+            <li><p><strong>Formenkonstruktion.</strong> Wir konstruieren Trennebene, Flansche, Ausrichtung und verfahrensspezifische Details.</p></li>
+            <li><p><strong>Prüfung und Freigabe.</strong> Sie prüfen die Konstruktion und geben sie frei, bevor Dateien übergeben oder etwas gefertigt wird.</p></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 + 7. Turnaround & price / Example -->
+  <section class="section">
+    <div class="container grid grid-2">
+      <div>
+        <p class="eyebrow">Lieferzeit und Preis</p>
+        <h2>Klarer Umfang, klares Angebot.</h2>
+        <div class="price-box">
+          <div class="panel">
+            <p class="big">Angebot je Projekt</p>
+            <p>Hängt von Bauteilgröße, Komplexität und Verfahren ab. <span class="todo">[Oder einen „ab €…“-Preis angeben]</span></p>
+          </div>
+          <div class="panel">
+            <p class="big"><span class="todo">[X–Y]</span> Arbeitstage</p>
+            <p>Typische Bearbeitungszeit nach der Geometrieprüfung.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">Beispielprojekt</p>
+        <a class="card project-card" href="project-hydrofoil-wing-mold.html">
+          <div class="media is-placeholder"><img src="../assets/img/project-hydrofoil.svg" width="800" height="500" alt="" loading="lazy"></div>
+          <div class="project-card__body">
+            <span class="badge-demo">Demonstrationsprojekt</span>
+            <h3>Form für einen Hydrofoil-Flügel</h3>
+            <p>Eine zweiteilige Form für einen Carbon-Hydrofoil-Flügel, ausgelegt auf eine dünne Hinterkante.</p>
+            <span class="link-arrow">Projekt ansehen</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ -->
+  <section class="section section--soft">
+    <div class="container container--narrow">
+      <p class="eyebrow">FAQ</p>
+      <h2>Fragen zu Mold Design</h2>
+      <div class="faq">
+        <details>
+          <summary>Für welche Verfahren konstruieren Sie Formen?</summary>
+          <div><p>Harzinfusion, Prepreg und Handlaminat. Nennen Sie uns Ihr Verfahren und Ihre Aushärtebedingungen, damit die Form dafür ausgelegt wird.</p></div>
+        </details>
+        <details>
+          <summary>Was erhalte ich am Ende?</summary>
+          <div><p>Form-CAD in STEP, STL und 3MF, Zeichnungen als PDF sowie Hinweise zu den Konstruktionsentscheidungen, die für Entformung und Ausrichtung wichtig sind.</p></div>
+        </details>
+        <details>
+          <summary>Können Sie die Form auch bauen?</summary>
+          <div><p>Ja, siehe <a href="mold-manufacturing.html">Custom Tooling &amp; Manufacturing</a>. Oder geben Sie die Dateien Ihrem eigenen Lieferanten: Sie sind produktionsreif.</p></div>
+        </details>
+        <details>
+          <summary>Und wenn sich mein Bauteil so nicht entformen lässt?</summary>
+          <div><p>Genau dafür ist die kostenlose Geometrieprüfung da. Wir zeigen das Problem auf und schlagen Änderungen vor, bevor die Konstruktion beginnt.</p></div>
+        </details>
+        <details>
+          <summary>Wem gehört die Formkonstruktion?</summary>
+          <div><p>Die Eigentumsrechte an den Ergebnissen sind in unseren <a href="terms.html">AGB</a> geregelt und werden in Ihrem Angebot bestätigt.</p></div>
+        </details>
+        <details>
+          <summary>Bleiben meine Dateien vertraulich?</summary>
+          <div><p>Ja. Ihre Dateien werden nur für Ihr Projekt verwendet, ein NDA ist auf Anfrage möglich.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <p class="eyebrow">Wenn Sie so weit sind</p>
+        <h2>Eine Form, die jedes Mal saubere Teile liefert.</h2>
+        <p>Senden Sie uns Ihr Bauteil zur kostenlosen Geometrieprüfung oder fordern Sie ein Angebot an.</p>
+        <div class="btn-row">
+          <a class="btn" href="contact.html">Angebot anfordern</a>
+          <a class="btn btn--ghost" href="feasibility-check.html">Kostenlose Machbarkeitsprüfung</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- shared:footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html" aria-label="Optimolds Startseite">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#13304a"/><path d="M7 13V8h18v5M7 19v5h18v-5" fill="none" stroke="#4fd8d6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 16c3.2-3.1 12.8-3.3 16 0-3.2 2.7-12.8 2.5-16 0z" fill="#1cc6c4"/></svg>
+          <span class="brand__name" translate="no">Opti<span>molds</span></span>
+        </a>
+        <p class="footer-tagline">Vom CAD zum Composite-Bauteil: FEA und Lagenaufbau, Formenkonstruktion und Formenbau für kleine Composite-Hersteller.</p>
+        <div class="social">
+          <a href="https://www.linkedin.com/company/TODO-your-page" aria-label="Optimolds auf LinkedIn" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.94 8.5H3.56V20h3.38zM5.25 3.5a1.97 1.97 0 1 0 0 3.94 1.97 1.97 0 0 0 0-3.94zM20.44 13.36c0-3.1-1.66-4.86-4.18-4.86a3.63 3.63 0 0 0-3.27 1.8V8.5H9.75V20h3.38v-5.7c0-1.5.29-2.95 2.15-2.95 1.83 0 1.85 1.72 1.85 3.05V20h3.31z"/></svg></a>
+          <a href="https://www.fiverr.com/TODO-your-username" aria-label="Optimolds auf Fiverr" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.25 4.1 1 5.8L12 16.9l-5.25 2.7 1-5.8L3.5 9.7l5.9-.9z"/></svg></a>
+          <a href="mailto:info@yourdomain.com" aria-label="E-Mail an Optimolds"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="M4 7l8 6 8-6"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h2>Leistungen</h2>
+        <ul>
+          <li><a href="fea-layup.html">FEA &amp; Layup Design</a></li>
+          <li><a href="mold-design.html">Mold Design</a></li>
+          <li><a href="mold-manufacturing.html">Custom Tooling &amp; Manufacturing</a></li>
+          <li><a href="feasibility-check.html">Kostenlose Machbarkeitsprüfung</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Unternehmen</h2>
+        <ul>
+          <li><a href="process.html">Ablauf</a></li>
+          <li><a href="projects.html">Projekte</a></li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Kontakt aufnehmen</h2>
+        <ul>
+          <li><a href="mailto:info@yourdomain.com"><span class="todo">info@yourdomain.com</span></a></li>
+          <li><a href="https://www.linkedin.com/company/TODO-your-page" rel="noopener" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.fiverr.com/TODO-your-username" rel="noopener" target="_blank">Fiverr-Profil</a></li>
+          <li>Wir antworten meist innerhalb von 1 Stunde</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="mb-0">&copy; <span data-year>2026</span> <span class="todo">[Eingetragener Firmenname]</span> · P.IVA <span class="todo">[IT00000000000]</span> · <span class="todo">[Eingetragene Anschrift, Italien]</span></p>
+      <ul>
+        <li><a href="privacy.html">Datenschutzerklärung</a></li>
+        <li><a href="cookies.html">Cookie-Richtlinie</a></li>
+        <li><a href="terms.html">AGB</a></li>
+        <li><button type="button" data-cookie-settings>Cookie-Einstellungen</button></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<div class="cookie-banner" role="region" aria-labelledby="cookie-title" hidden>
+  <button type="button" class="cookie-close" data-cookie-reject aria-label="Schließen und nur mit notwendiger Speicherung fortfahren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <h2 id="cookie-title">Cookies</h2>
+  <p>Wir nutzen notwendige Speicherung, damit die Website funktioniert, und – nur mit Ihrer Zustimmung – Analyse-Cookies, um zu verstehen, wie sie genutzt wird. Mehr dazu in unserer <a href="cookies.html">Cookie-Richtlinie</a>.</p>
+  <div class="btn-row">
+    <button type="button" class="btn btn--sm" data-cookie-accept>Analyse-Cookies akzeptieren</button>
+    <button type="button" class="btn btn--dark btn--sm" data-cookie-reject>Nur notwendige</button>
+  </div>
+</div>
+<script src="../assets/js/main.js" defer></script>
+<!-- /shared:footer -->
+</body>
+</html>
