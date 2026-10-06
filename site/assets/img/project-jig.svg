@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t d">
+<title id="t">Trim and drill jig for a composite part</title>
+<desc id="d">Technical illustration: top view of a fixture plate holding a curved composite part with locating blocks, datum pins and toggle clamps.</desc>
+<defs>
+  <pattern id="sec" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="10" stroke="#4FD8D6" stroke-opacity=".18" stroke-width="1.2"/>
+  </pattern>
+  <pattern id="ply" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+    <line x1="0" y1="0" x2="0" y2="5" stroke="#4FD8D6" stroke-opacity=".9" stroke-width="1.6"/>
+  </pattern>
+  <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#4FD8D6"/>
+  </marker>
+  <marker id="tick" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+    <line x1="5" y1="0" x2="5" y2="10" stroke="#4FD8D6" stroke-width="1.5"/>
+  </marker>
+</defs>
+<rect width="800" height="500" fill="#0B1F33"/>
+<g font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#4FD8D6" letter-spacing=".08em">
+  <rect x="100" y="96" width="600" height="328" rx="12" fill="#13304A" fill-opacity=".55" stroke="#4FD8D6" stroke-width="1.6"/>
+  <rect x="100" y="96" width="600" height="328" rx="12" fill="url(#sec)" fill-opacity=".5"/>
+  <circle cx="130" cy="116" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="130" cy="404" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="170" cy="116" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="170" cy="404" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="210" cy="116" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="210" cy="404" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="250" cy="116" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="250" cy="404" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="290" cy="116" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="290" cy="404" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="330" cy="116" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="330" cy="404" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="370" cy="116" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="370" cy="404" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="410" cy="116" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="410" cy="404" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="450" cy="116" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="450" cy="404" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="490" cy="116" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="490" cy="404" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="530" cy="116" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="530" cy="404" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="570" cy="116" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="570" cy="404" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="610" cy="116" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="610" cy="404" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="650" cy="116" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="650" cy="404" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="690" cy="116" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/><circle cx="690" cy="404" r="3" fill="none" stroke="#4FD8D6" stroke-opacity=".25"/>
+  <path d="M210,300 C260,220 420,170 600,176 C628,177 640,196 626,212 C560,232 420,262 300,330 C262,352 186,340 210,300 Z" fill="none" stroke="#4FD8D6" stroke-opacity=".45" stroke-dasharray="6 5" transform="translate(-4,6) scale(1.0)"/>
+  <path d="M210,300 C260,220 420,170 600,176 C628,177 640,196 626,212 C560,232 420,262 300,330 C262,352 186,340 210,300 Z" fill="#06131F"/>
+  <path d="M210,300 C260,220 420,170 600,176 C628,177 640,196 626,212 C560,232 420,262 300,330 C262,352 186,340 210,300 Z" fill="url(#ply)" stroke="#4FD8D6" stroke-width="1.8"/>
+  <rect x="232" y="334" width="30" height="16" rx="2" fill="#13304A" stroke="#4FD8D6" stroke-width="1.4"/><rect x="388" y="282" width="30" height="16" rx="2" fill="#13304A" stroke="#4FD8D6" stroke-width="1.4"/><rect x="560" y="236" width="30" height="16" rx="2" fill="#13304A" stroke="#4FD8D6" stroke-width="1.4"/><rect x="612" y="158" width="16" height="26" rx="2" fill="#13304A" stroke="#4FD8D6" stroke-width="1.4"/>
+  <circle cx="250" cy="270" r="9" fill="#0B1F33" stroke="#4FD8D6" stroke-width="1.6"/><path d="M237,270 h26 M250,257 v26" stroke="#4FD8D6" stroke-width="1"/><text x="262" y="258" font-size="11">A</text><circle cx="560" cy="196" r="9" fill="#0B1F33" stroke="#4FD8D6" stroke-width="1.6"/><path d="M547,196 h26 M560,183 v26" stroke="#4FD8D6" stroke-width="1"/><text x="572" y="184" font-size="11">B</text>
+  <g transform="translate(330,212) rotate(-120)"><rect x="-14" y="-14" width="28" height="28" rx="4" fill="#0B1F33" stroke="#4FD8D6" stroke-width="1.4"/><rect x="10" y="-5" width="54" height="10" rx="5" fill="none" stroke="#4FD8D6" stroke-width="1.4"/><circle r="5" fill="none" stroke="#4FD8D6"/></g><g transform="translate(500,186) rotate(-100)"><rect x="-14" y="-14" width="28" height="28" rx="4" fill="#0B1F33" stroke="#4FD8D6" stroke-width="1.4"/><rect x="10" y="-5" width="54" height="10" rx="5" fill="none" stroke="#4FD8D6" stroke-width="1.4"/><circle r="5" fill="none" stroke="#4FD8D6"/></g><g transform="translate(470,300) rotate(40)"><rect x="-14" y="-14" width="28" height="28" rx="4" fill="#0B1F33" stroke="#4FD8D6" stroke-width="1.4"/><rect x="10" y="-5" width="54" height="10" rx="5" fill="none" stroke="#4FD8D6" stroke-width="1.4"/><circle r="5" fill="none" stroke="#4FD8D6"/></g>
+  <circle cx="300" cy="300" r="4" fill="none" stroke="#4FD8D6" stroke-width="1.4"/><circle cx="420" cy="250" r="4" fill="none" stroke="#4FD8D6" stroke-width="1.4"/><circle cx="540" cy="214" r="4" fill="none" stroke="#4FD8D6" stroke-width="1.4"/>
+  <text x="100" y="68" font-size="13">TRIM &amp; DRILL JIG · TOP VIEW</text>
+  <text x="700" y="68" text-anchor="end" fill-opacity=".7">FIXTURE PLATE</text>
+  <text x="100" y="456" fill-opacity=".7">— — TRIM LINE    ○ DRILL BUSH    ▭ LOCATOR    ⊕ DATUM PIN</text>
+</g>
+</svg>

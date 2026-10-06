@@ -1,0 +1,11 @@
+{
+  "name": "optimolds-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Optimolds marketing website: static HTML/CSS, no dependencies.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "python3 -m http.server 8000 --directory site"
+  },
+  "license": "MIT"
+}

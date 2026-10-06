@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t d">
+<title id="t">Stress contour plot of a laminated plate with a hole</title>
+<desc id="d">Illustration of a finite element result: a plate loaded in tension, with stress concentrating at the top and bottom of a central hole, a meshed surface, a colour legend and a ply orientation diagram.</desc>
+<defs>
+  <pattern id="sec" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="10" stroke="#4FD8D6" stroke-opacity=".18" stroke-width="1.2"/>
+  </pattern>
+  <pattern id="ply" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+    <line x1="0" y1="0" x2="0" y2="5" stroke="#4FD8D6" stroke-opacity=".9" stroke-width="1.6"/>
+  </pattern>
+  <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#4FD8D6"/>
+  </marker>
+  <marker id="tick" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+    <line x1="5" y1="0" x2="5" y2="10" stroke="#4FD8D6" stroke-width="1.5"/>
+  </marker>
+  <radialGradient id="hot" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#d7301f" stop-opacity="1"/><stop offset=".2" stop-color="#fdae61" stop-opacity="1"/><stop offset=".4" stop-color="#fee08b" stop-opacity="1"/><stop offset=".62" stop-color="#66c2a5" stop-opacity="0.9"/><stop offset=".85" stop-color="#3288bd" stop-opacity="0.5"/><stop offset="1" stop-color="#3288bd" stop-opacity="0"/></radialGradient>
+  <linearGradient id="legend" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d7301f"/><stop offset=".25" stop-color="#fdae61"/><stop offset=".5" stop-color="#fee08b"/><stop offset=".75" stop-color="#66c2a5"/><stop offset="1" stop-color="#3288bd"/></linearGradient>
+  <radialGradient id="cool" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#1f4e9a"/><stop offset="1" stop-color="#1f4e9a" stop-opacity="0"/></radialGradient>
+  <clipPath id="plateclip"><path d="M120,140 H600 V360 H120 Z M410,250 a50,50 0 1,0 -100,0 a50,50 0 1,0 100,0 Z" clip-rule="evenodd"/></clipPath>
+  <pattern id="mesh" width="16" height="16" patternUnits="userSpaceOnUse">
+    <path d="M16,0 V16 H0" fill="none" stroke="#06131F" stroke-opacity=".35" stroke-width=".8"/>
+    <path d="M0,0 L16,16" stroke="#06131F" stroke-opacity=".18" stroke-width=".6"/>
+  </pattern>
+</defs>
+<rect width="800" height="500" fill="#0B1F33"/>
+<g font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#4FD8D6" letter-spacing=".08em">
+  <g clip-path="url(#plateclip)">
+    <rect x="120" y="140" width="480" height="220" fill="#3288bd"/>
+    <ellipse cx="360" cy="250" rx="250" ry="150" fill="#3a7fc0" fill-opacity=".6"/>
+    <ellipse cx="360" cy="200" rx="150" ry="95" fill="url(#hot)"/>
+    <ellipse cx="360" cy="300" rx="150" ry="95" fill="url(#hot)"/>
+    <ellipse cx="292" cy="250" rx="60" ry="70" fill="url(#cool)"/>
+    <ellipse cx="428" cy="250" rx="60" ry="70" fill="url(#cool)"/>
+    <rect x="120" y="140" width="480" height="220" fill="url(#mesh)"/>
+  </g>
+  <path d="M120,140 H600 V360 H120 Z M410,250 a50,50 0 1,0 -100,0 a50,50 0 1,0 100,0 Z" fill="none" fill-rule="evenodd" stroke="#4FD8D6" stroke-width="1.6"/>
+  <line x1="118" y1="170" x2="62" y2="170" stroke="#4FD8D6" stroke-width="1.6" marker-end="url(#arw)"/><line x1="602" y1="170" x2="658" y2="170" stroke="#4FD8D6" stroke-width="1.6" marker-end="url(#arw)"/><line x1="118" y1="210" x2="62" y2="210" stroke="#4FD8D6" stroke-width="1.6" marker-end="url(#arw)"/><line x1="602" y1="210" x2="658" y2="210" stroke="#4FD8D6" stroke-width="1.6" marker-end="url(#arw)"/><line x1="118" y1="250" x2="62" y2="250" stroke="#4FD8D6" stroke-width="1.6" marker-end="url(#arw)"/><line x1="602" y1="250" x2="658" y2="250" stroke="#4FD8D6" stroke-width="1.6" marker-end="url(#arw)"/><line x1="118" y1="290" x2="62" y2="290" stroke="#4FD8D6" stroke-width="1.6" marker-end="url(#arw)"/><line x1="602" y1="290" x2="658" y2="290" stroke="#4FD8D6" stroke-width="1.6" marker-end="url(#arw)"/><line x1="118" y1="330" x2="62" y2="330" stroke="#4FD8D6" stroke-width="1.6" marker-end="url(#arw)"/><line x1="602" y1="330" x2="658" y2="330" stroke="#4FD8D6" stroke-width="1.6" marker-end="url(#arw)"/>
+  <text x="80" y="156">F</text><text x="632" y="156">F</text>
+  <rect x="700" y="140" width="18" height="220" fill="url(#legend)" stroke="#4FD8D6" stroke-opacity=".5"/>
+  <text x="709" y="128" text-anchor="middle" font-size="11">MAX</text>
+  <text x="709" y="380" text-anchor="middle" font-size="11">MIN</text>
+  <text x="120" y="100" font-size="13">STRESS CONTOUR · DEMO</text>
+  <text x="600" y="100" text-anchor="end" fill-opacity=".7">TENSION LOAD CASE</text>
+  <g transform="translate(160,438)">
+    <circle r="30" fill="none" stroke="#4FD8D6" stroke-opacity=".4"/>
+    <line x1="-30" y1="0" x2="30" y2="0" stroke="#4FD8D6" stroke-width="1.4"/>
+    <line x1="0" y1="-30" x2="0" y2="30" stroke="#4FD8D6" stroke-width="1.4"/>
+    <line x1="-21" y1="21" x2="21" y2="-21" stroke="#4FD8D6" stroke-width="1.4"/>
+    <line x1="-21" y1="-21" x2="21" y2="21" stroke="#4FD8D6" stroke-width="1.4"/>
+  </g>
+  <text x="206" y="434">PLY ORIENTATION</text>
+  <text x="206" y="452" fill-opacity=".7">0° · +45° · −45° · 90°</text>
+</g>
+</svg>

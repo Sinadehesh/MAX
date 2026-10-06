@@ -1,0 +1,101 @@
+# Optimolds website
+
+The Optimolds marketing site, built from [`docs/blueprint.md`](docs/blueprint.md): 18 pages of plain HTML and CSS. There's no framework and nothing to install, and it runs on any static host.
+
+```
+site/                 ← the website itself (this folder is what gets published)
+  index.html            Home
+  services.html         Services overview
+  fea-layup.html        Service: FEA & Layup
+  mold-design.html      Service: Mold Design
+  mold-manufacturing.html  Service: Mold & Jig Manufacturing
+  process.html          7-step process with the approval gate
+  projects.html         Project index with filters
+  project-*.html        3 case studies (same template)
+  feasibility-check.html  Free Feasibility Check form (main CTA)
+  about.html, contact.html, thank-you.html, 404.html
+  privacy.html, cookies.html, terms.html
+  assets/css            styles.css (all design), fonts.css (self-hosted fonts)
+  assets/js/main.js     mobile menu, cookie banner, project filters, form helpers
+  assets/img            illustrations, favicon, social share image
+  assets/fonts          self-hosted fonts (no data sent to Google, GDPR-friendly)
+partials/             shared <head>, header and footer, copied into every page
+scripts/build.mjs     syncs partials, writes sitemap/robots, checks links, lists placeholders
+docs/blueprint.md     the original plan
+```
+
+## Preview it
+
+```bash
+npm run preview          # or: python3 -m http.server 8000 --directory site
+```
+
+Then open http://localhost:8000. You can also just double-click `site/index.html`.
+
+## Fill in your content
+
+Anything that needs your real details is **highlighted in yellow** on the page (`<span class="todo">…</span>`), and placeholder links contain `TODO` or `yourdomain.com`. To list every one that's left:
+
+```bash
+npm run build            # or: node scripts/build.mjs
+```
+
+What's needed (also in the blueprint's "What to prepare" list):
+
+| Where | What |
+|---|---|
+| Footer (`partials/footer.html`) | Registered business name, P.IVA, address, email, LinkedIn and Fiverr URLs |
+| Home | 3 Fiverr review quotes (bene2111 first), featured project result line |
+| Service pages | "From €…" prices (or keep "Quoted per project"), typical turnaround, FEA software/methods, tooling temperature/pressure limits |
+| Project pages | Real brief, design decisions, results, quick facts and photos. Remove the **Demonstration project** label for paying-client work. |
+| About | Your name, background, city, photo, workshop photos |
+| Contact | Calendly (or Cal.com) link |
+| Legal pages | Dates, providers, retention periods, payment/revision terms. **Have these reviewed by a professional before launch.** |
+| `scripts/build.mjs` | `SITE_URL`: your real domain (used for canonical links, sitemap and social previews) |
+
+### The shared header and footer
+
+The header, footer and `<head>` live once in `partials/`. Edit them there and run `npm run build`: the script copies them into every page and marks the current page in the menu. Don't edit the content between `<!-- shared:… -->` markers in a page, because it gets overwritten.
+
+### Images
+
+- **Logo:** the header uses a placeholder mark and wordmark. Swap the `<svg class="brand__mark">` and text in `partials/header.html` / `footer.html` for `<img src="assets/img/logo.svg" alt="Optimolds" height="34">`.
+- **Hero:** `index.html` has a comment showing how to swap the illustration for your render or a short video loop.
+- **Project images:** the technical illustrations carry a "Placeholder art" badge. When you have real photos, drop them in `site/assets/img/`, change the `src`, and remove `is-placeholder` from the wrapper.
+- **Dashed photo frames** (`<div class="ph-frame">`): replace each with `<img src="assets/img/your-photo.jpg" alt="Describe the photo" loading="lazy">`.
+- Keep photos under ~300 KB (export JPG/WebP at ~1600 px wide), and always write the `alt` text.
+
+## Forms
+
+Both forms (Feasibility Check and Contact) send visitors to `thank-you.html` after submitting.
+
+- **Netlify (zero setup, recommended):** forms are detected automatically, including CAD uploads up to 8 MB. In the Netlify dashboard → *Forms* → *Form notifications*, add an email notification to yourself. For the auto-reply to the client, connect Netlify Forms to Zapier/Make, or use one of the options below.
+- **Any other host (Vercel, Cloudflare Pages, etc.):** create a form at [Formspree](https://formspree.io) (or similar) and put its URL in the form's `data-endpoint="…"` attribute. The script then posts there and redirects to the thank-you page. Formspree's free plan doesn't accept file uploads, so visitors use the link field.
+- **Bigger uploads / built-in auto-reply:** build the form in [Tally](https://tally.so) or Jotform and replace the `<form>` with their embed code.
+
+If your provider's upload limit isn't 8 MB, update `MAX_UPLOAD_MB` in `assets/js/main.js` and the hint text on the form.
+
+## Analytics and cookies
+
+Put your Google Analytics 4 ID in `GA_MEASUREMENT_ID` at the top of `site/assets/js/main.js`. Analytics loads **only after a visitor clicks "Accept analytics"**. "Essential only" and the × both mean no. Visitors can change their choice via *Cookie settings* in the footer. The Cookie Policy already describes this setup, so update it if you add other tools.
+
+## Deploy
+
+- **Netlify:** connect this GitHub repo (settings come from `netlify.toml`), or drag the `site` folder onto app.netlify.com/drop.
+- **Vercel:** import the repo; `vercel.json` sets the output folder and clean URLs. Use `data-endpoint` for forms.
+- **Cloudflare Pages / GitHub Pages:** publish the `site` folder. No build step is required, because the committed HTML is always up to date.
+
+Then add your domain, set `SITE_URL`, run `npm run build`, and submit `https://yourdomain/sitemap.xml` in Google Search Console.
+
+## Add a page
+
+Copy a page with the same layout (for example `project-trim-drill-jig.html` for a new case study), change the `<title>`, meta description and content, then run `npm run build`. For a new project, also copy a card in `projects.html` and set its `data-services` (`fea`, `mold-design`, `manufacturing`).
+
+## Before launch
+
+- [ ] `npm run build` shows no problems and no placeholders
+- [ ] Both forms tested on phone and desktop: you get the email, the client gets the auto-reply
+- [ ] Legal pages reviewed, company details in the footer
+- [ ] Real photos in place, each under ~300 KB with alt text
+- [ ] Domain email working; LinkedIn, Fiverr and Calendly links correct
+- [ ] Analytics ID set; Search Console verified and sitemap submitted
