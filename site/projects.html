@@ -8,6 +8,11 @@
 <!-- shared:head -->
 <meta name="theme-color" content="#0b1f33">
 <link rel="canonical" href="https://optimolds.com/projects">
+<link rel="alternate" hreflang="en" href="https://optimolds.com/projects">
+<link rel="alternate" hreflang="it" href="https://optimolds.com/it/projects">
+<link rel="alternate" hreflang="de" href="https://optimolds.com/de/projects">
+<link rel="alternate" hreflang="x-default" href="https://optimolds.com/projects">
+<meta property="og:locale" content="en_GB">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Optimolds">
 <meta property="og:title" content="Projects &amp; Case Studies | Optimolds">
@@ -29,7 +34,7 @@
   <div class="container">
     <a class="brand" href="index.html" aria-label="Optimolds home">
       <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0b1f33"/><path d="M7 13V8h18v5M7 19v5h18v-5" fill="none" stroke="#4fd8d6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 16c3.2-3.1 12.8-3.3 16 0-3.2 2.7-12.8 2.5-16 0z" fill="#1cc6c4"/></svg>
-      <span class="brand__name">Opti<span>molds</span></span>
+      <span class="brand__name" translate="no">Opti<span>molds</span></span>
     </a>
     <nav class="nav" aria-label="Main">
       <ul>
@@ -40,6 +45,14 @@
         <li><a href="contact.html" data-nav="contact">Contact</a></li>
       </ul>
     </nav>
+    <!-- lang:start --><details class="lang" translate="no">
+    <summary aria-label="Language: English"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.5 5.5 3.5 8.5s-1 5.9-3.5 8.5c-2.5-2.6-3.5-5.5-3.5-8.5s1-5.9 3.5-8.5z"/></svg><span>EN</span></summary>
+    <ul>
+      <li><a href="projects.html" hreflang="en" lang="en" aria-current="true">English</a></li>
+      <li><a href="it/projects.html" hreflang="it" lang="it">Italiano</a></li>
+      <li><a href="de/projects.html" hreflang="de" lang="de">Deutsch</a></li>
+    </ul>
+  </details><!-- lang:end -->
     <a class="btn btn--sm header-cta" href="feasibility-check.html" data-nav="feasibility">Free Feasibility Check</a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
       <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -75,9 +88,9 @@
     <div class="container">
       <div class="filters" role="group" aria-label="Filter projects by service">
         <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
-        <button class="filter-btn" type="button" data-filter="fea" aria-pressed="false">FEA &amp; Layup</button>
+        <button class="filter-btn" type="button" data-filter="fea" aria-pressed="false">FEA &amp; Layup Design</button>
         <button class="filter-btn" type="button" data-filter="mold-design" aria-pressed="false">Mold Design</button>
-        <button class="filter-btn" type="button" data-filter="manufacturing" aria-pressed="false">Manufacturing</button>
+        <button class="filter-btn" type="button" data-filter="manufacturing" aria-pressed="false">Tooling &amp; Manufacturing</button>
       </div>
 
       <!-- To add a project: copy one <a class="card project-card"> block, set data-services
@@ -141,7 +154,7 @@
       <div>
         <a class="brand" href="index.html" aria-label="Optimolds home">
           <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#13304a"/><path d="M7 13V8h18v5M7 19v5h18v-5" fill="none" stroke="#4fd8d6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 16c3.2-3.1 12.8-3.3 16 0-3.2 2.7-12.8 2.5-16 0z" fill="#1cc6c4"/></svg>
-          <span class="brand__name">Opti<span>molds</span></span>
+          <span class="brand__name" translate="no">Opti<span>molds</span></span>
         </a>
         <p class="footer-tagline">From CAD to composite part: FEA &amp; layup, mold design and mold manufacturing for small composite producers.</p>
         <div class="social">
@@ -153,9 +166,9 @@
       <div>
         <h2>Services</h2>
         <ul>
-          <li><a href="fea-layup.html">FEA &amp; Layup</a></li>
+          <li><a href="fea-layup.html">FEA &amp; Layup Design</a></li>
           <li><a href="mold-design.html">Mold Design</a></li>
-          <li><a href="mold-manufacturing.html">Mold &amp; Jig Manufacturing</a></li>
+          <li><a href="mold-manufacturing.html">Custom Tooling &amp; Manufacturing</a></li>
           <li><a href="feasibility-check.html">Free Feasibility Check</a></li>
         </ul>
       </div>
