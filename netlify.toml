@@ -1,0 +1,4 @@
+# Netlify: publishes the /site folder. Forms on the site are picked up by Netlify Forms automatically.
+[build]
+  publish = "site"
+  command = "node scripts/build.mjs"
