@@ -8,6 +8,9 @@
   var GA_MEASUREMENT_ID = "";
   // Largest upload accepted by your form provider (Netlify Forms: 8 MB per submission).
   var MAX_UPLOAD_MB = 8;
+  // true only when the site is hosted on Netlify, where Netlify Forms accept plain form posts.
+  // On any other host (this site runs on Cloudflare Pages), set each form's data-endpoint instead.
+  var NETLIFY_FORMS = false;
   // ---------------------------------------------------------------------------
 
   var CONSENT_KEY = "optimolds-cookie-consent";
@@ -118,10 +121,16 @@
       }
 
       // If data-endpoint is set (e.g. a Formspree URL), post there with fetch and
-      // redirect to the thank-you page. Otherwise the browser submits normally
-      // (Netlify Forms picks it up automatically).
+      // redirect to the thank-you page. Without an endpoint, only Netlify can
+      // receive the post; anywhere else, tell the visitor instead of losing it.
       var endpoint = form.getAttribute("data-endpoint");
-      if (!endpoint || !window.fetch) return;
+      if (!endpoint) {
+        if (NETLIFY_FORMS) return;
+        e.preventDefault();
+        showError("Sorry, our online form isn't connected yet. Please message us on LinkedIn or Fiverr (links at the bottom of the page) and we'll get back to you quickly.");
+        return;
+      }
+      if (!window.fetch) { form.action = endpoint; return; }
       e.preventDefault();
       var submit = form.querySelector('[type="submit"]');
       if (submit) { submit.disabled = true; submit.dataset.label = submit.textContent; submit.textContent = "Sending…"; }

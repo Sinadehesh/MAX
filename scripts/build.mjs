@@ -10,7 +10,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 // ---- Change this to your real domain before launch --------------------------
-const SITE_URL = "https://www.yourdomain.com";
+const SITE_URL = "https://optimolds.com";
 // Pages that should not appear in search results or the sitemap.
 const NOINDEX = new Set(["404.html", "thank-you.html"]);
 // ------------------------------------------------------------------------------
