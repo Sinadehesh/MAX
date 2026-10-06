@@ -89,8 +89,8 @@ One-time setup in the Cloudflare dashboard:
 
 1. **Workers & Pages** → **Create application** → **Import a repository** → GitHub → `Sinadehesh/MAX`.
 2. Settings:
-   - Project name: `optimolds` (must match `name` in `wrangler.jsonc`)
-   - Git branch: the branch that holds the site
+   - Project name: `max` (must match `name` in `wrangler.jsonc`)
+   - Git branch: `main`
    - Build command: `node scripts/build.mjs`
    - Deploy command: `npx wrangler deploy` (the default)
 3. **Deploy**. When it finishes, optimolds.com is live. Every later push to that branch redeploys.

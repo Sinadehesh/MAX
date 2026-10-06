@@ -2,13 +2,15 @@
 // Deploying (Workers Builds or `npx wrangler deploy`) attaches both custom domains and
 // creates their DNS records automatically.
 {
-  "name": "optimolds",
+  // Must match the Worker's name in the Cloudflare dashboard.
+  "name": "max",
   "compatibility_date": "2026-09-22",
   "assets": {
     "directory": "./site",
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash"
   },
+  "workers_dev": false,
   "routes": [
     { "pattern": "optimolds.com", "custom_domain": true },
     { "pattern": "www.optimolds.com", "custom_domain": true }
