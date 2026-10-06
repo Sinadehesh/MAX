@@ -10,7 +10,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 // ---- Change this to your real domain before launch --------------------------
-const SITE_URL = "https://www.yourdomain.com";
+const SITE_URL = "https://optimolds.com";
 // Pages that should not appear in search results or the sitemap.
 const NOINDEX = new Set(["404.html", "thank-you.html"]);
 // ------------------------------------------------------------------------------
@@ -59,6 +59,11 @@ for (const file of pages) {
     const re = new RegExp(`(<!-- shared:${name} -->)[\\s\\S]*?(<!-- /shared:${name} -->)`);
     if (!re.test(out)) { problems.push(`${file}: missing <!-- shared:${name} --> markers`); continue; }
     out = out.replace(re, (_, open, close) => `${open}\n${content}\n${close}`);
+  }
+  // The 404 page is served at any missing URL (e.g. /old/page), so its links and
+  // assets must be root-relative or they'd resolve under the missing path.
+  if (file === "404.html") {
+    out = out.replace(/(\s(?:href|src)=")(?!https?:|mailto:|tel:|data:|#|\/)([^"]+)"/g, '$1/$2"');
   }
   if (out !== html) { fs.writeFileSync(full, out); changed++; }
 

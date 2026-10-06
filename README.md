@@ -1,6 +1,6 @@
 # Optimolds website
 
-The Optimolds marketing site, built from [`docs/blueprint.md`](docs/blueprint.md): 18 pages of plain HTML and CSS. There's no framework and nothing to install, and it runs on any static host.
+Live at **https://optimolds.com**, hosted on GitHub Pages (DNS on Cloudflare). The Optimolds marketing site, built from [`docs/blueprint.md`](docs/blueprint.md): 18 pages of plain HTML and CSS. There's no framework and nothing to install, and it runs on any static host.
 
 ```
 site/                 ← the website itself (this folder is what gets published)
@@ -51,7 +51,6 @@ What's needed (also in the blueprint's "What to prepare" list):
 | About | Your name, background, city, photo, workshop photos |
 | Contact | Calendly (or Cal.com) link |
 | Legal pages | Dates, providers, retention periods, payment/revision terms. **Have these reviewed by a professional before launch.** |
-| `scripts/build.mjs` | `SITE_URL`: your real domain (used for canonical links, sitemap and social previews) |
 
 ### The shared header and footer
 
@@ -67,25 +66,44 @@ The header, footer and `<head>` live once in `partials/`. Edit them there and ru
 
 ## Forms
 
-Both forms (Feasibility Check and Contact) send visitors to `thank-you.html` after submitting.
+Both forms (Feasibility Check and Contact) send visitors to `thank-you.html` after submitting. **GitHub Pages only serves files and doesn't receive form posts**, so each form needs a form service. Until one is connected, visitors see a polite "form isn't connected yet" message instead of an error.
 
-- **Netlify (zero setup, recommended):** forms are detected automatically, including CAD uploads up to 8 MB. In the Netlify dashboard → *Forms* → *Form notifications*, add an email notification to yourself. For the auto-reply to the client, connect Netlify Forms to Zapier/Make, or use one of the options below.
-- **Any other host (Vercel, Cloudflare Pages, etc.):** create a form at [Formspree](https://formspree.io) (or similar) and put its URL in the form's `data-endpoint="…"` attribute. The script then posts there and redirects to the thank-you page. Formspree's free plan doesn't accept file uploads, so visitors use the link field.
-- **Bigger uploads / built-in auto-reply:** build the form in [Tally](https://tally.so) or Jotform and replace the `<form>` with their embed code.
+1. Create a free account at [Formspree](https://formspree.io) (or similar) and make two forms, "Feasibility check" and "Contact". Turn on email notifications and, if you like, an auto-reply.
+2. Paste each form's URL into the matching `data-endpoint="…"` attribute in `site/feasibility-check.html` and `site/contact.html`, for example `data-endpoint="https://formspree.io/f/abcdwxyz"`.
+3. Commit and push to `main`; the site redeploys automatically.
 
-If your provider's upload limit isn't 8 MB, update `MAX_UPLOAD_MB` in `assets/js/main.js` and the hint text on the form.
+Formspree's free plan doesn't accept file uploads, so on that plan visitors should use the "link to your files" field (or remove the upload field). For built-in uploads and auto-replies on a free plan, build the form in [Tally](https://tally.so) and replace the `<form>` with their embed code.
+
+If you ever move the site to **Netlify**, set `NETLIFY_FORMS = true` in `site/assets/js/main.js` and the forms work with no service (uploads up to 8 MB). If your provider's upload limit isn't 8 MB, update `MAX_UPLOAD_MB` and the hint text on the form.
 
 ## Analytics and cookies
 
 Put your Google Analytics 4 ID in `GA_MEASUREMENT_ID` at the top of `site/assets/js/main.js`. Analytics loads **only after a visitor clicks "Accept analytics"**. "Essential only" and the × both mean no. Visitors can change their choice via *Cookie settings* in the footer. The Cookie Policy already describes this setup, so update it if you add other tools.
 
-## Deploy
+## Deploy (GitHub Pages)
 
-- **Netlify:** connect this GitHub repo (settings come from `netlify.toml`), or drag the `site` folder onto app.netlify.com/drop.
-- **Vercel:** import the repo; `vercel.json` sets the output folder and clean URLs. Use `data-endpoint` for forms.
-- **Cloudflare Pages / GitHub Pages:** publish the `site` folder. No build step is required, because the committed HTML is always up to date.
+Every push to `main` runs `.github/workflows/static.yml`, which runs `node scripts/build.mjs` and publishes the `site` folder to GitHub Pages. If the build finds a broken link, the deploy stops, so a broken site never goes live. Progress is shown under the repo's **Actions** tab.
 
-Then add your domain, set `SITE_URL`, run `npm run build`, and submit `https://yourdomain/sitemap.xml` in Google Search Console.
+Repository settings (one-time, already done except the domain):
+
+- **Settings → Pages → Build and deployment → Source: GitHub Actions.** If this is set to "Deploy from a branch", GitHub renders the README as the website instead.
+- **Settings → Pages → Custom domain:** `optimolds.com` → Save, then tick **Enforce HTTPS** once the certificate is issued. (With an Actions deploy, a `CNAME` file isn't needed or used.)
+
+DNS for optimolds.com in Cloudflare (**DNS → Records**), all set to **DNS only** (grey cloud) so GitHub can issue the HTTPS certificate:
+
+| Type | Name | Content |
+|---|---|---|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| AAAA | `@` | `2606:50c0:8000::153` |
+| AAAA | `@` | `2606:50c0:8001::153` |
+| AAAA | `@` | `2606:50c0:8002::153` |
+| AAAA | `@` | `2606:50c0:8003::153` |
+| CNAME | `www` | `sinadehesh.github.io` |
+
+GitHub redirects `www.optimolds.com` to `optimolds.com` automatically. After launch, submit `https://optimolds.com/sitemap.xml` in Google Search Console.
 
 ## Add a page
 

@@ -7,13 +7,13 @@
 <meta name="description" content="Send your CAD and get a free manufacturability, lamination and demolding risk report within 48 hours. No cost, no obligation. NDA available on request.">
 <!-- shared:head -->
 <meta name="theme-color" content="#0b1f33">
-<link rel="canonical" href="https://www.yourdomain.com/feasibility-check">
+<link rel="canonical" href="https://optimolds.com/feasibility-check">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Optimolds">
 <meta property="og:title" content="Free Feasibility Check for Composite Parts | Optimolds">
 <meta property="og:description" content="Send your CAD and get a free manufacturability, lamination and demolding risk report within 48 hours. No cost, no obligation. NDA available on request.">
-<meta property="og:url" content="https://www.yourdomain.com/feasibility-check">
-<meta property="og:image" content="https://www.yourdomain.com/assets/img/og-image.png">
+<meta property="og:url" content="https://optimolds.com/feasibility-check">
+<meta property="og:image" content="https://optimolds.com/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -78,9 +78,8 @@
         <h2>Tell us about your part</h2>
         <p class="muted">Fields marked <span class="req">*</span> are required.</p>
 
-        <!-- Form delivery: works out of the box on Netlify (Netlify Forms, file uploads included).
-             On another host, set data-endpoint to your form service URL (e.g. https://formspree.io/f/xxxx).
-             See README.md → "Forms". -->
+        <!-- Form delivery: put your form service URL in data-endpoint (e.g. https://formspree.io/f/xxxx).
+             Until it's set, visitors see a "not connected yet" message. See README.md → "Forms". -->
         <form class="form" data-form name="feasibility" method="POST" action="thank-you.html" enctype="multipart/form-data"
               data-netlify="true" netlify-honeypot="company_website" data-endpoint="">
           <input type="hidden" name="form-name" value="feasibility">
